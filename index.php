@@ -1,17 +1,30 @@
-<link rel="stylesheet" href="style.css">
-<div class="console">
-	<div class="output">
-		<span>Connecting to terminal student@rbc.ca</span><br/>
-		<span class="green">Connection successful!</span><br/>
-		<span class="seperator">== == == == == == == == == == == == == == == == == ==</span></br>
-		<pre contenteditable="false" style="color: white;"></pre></br>
-		<span class="seperator">== == == == == == == == == == == == == == == == == ==</span></br>
-		<span>Hope you have fun discovering all the <span class="red">hidden gems</span>!</span>
-		</br>
-		<span class="blue">type '<span class="grey">help</span>' to see a list of comands available</span><br>
-	</div>
-	<div class="action">
-		<span>dev$ </span>
-		<textarea class="input" name="input" cols="30" rows="1"></textarea>
-	</div>
-</div>
+<script src="jquery-3.2.1.min.js"></script>
+<script src="terminal/terminal/js/jquery.terminal-1.7.2.min.js"></script>
+<script src="terminal/terminal/js/jquery.mousewheel-min.js"></script>
+<link href="terminal/terminal/css/jquery.terminal-1.7.2.min.css" rel="stylesheet"/>
+
+<span id="term_demo"></span>
+
+<script>
+jQuery(function($, undefined) {
+    $('#term_demo').terminal(function(command) {
+        if (command !== '') {
+            try {
+                var result = window.eval(command);
+                if (result !== undefined) {
+                    this.echo(new String(result));
+                }
+            } catch(e) {
+                this.error(new String(e));
+            }
+        } else {
+           this.echo('');
+        }
+    }, {
+        greetings: 'Javascript Interpreter',
+        name: 'js_demo',
+        height: 200,
+        prompt: 'js> '
+    });
+});
+</script>
