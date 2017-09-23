@@ -3,28 +3,19 @@
 <script src="terminal/terminal/js/jquery.mousewheel-min.js"></script>
 <link href="terminal/terminal/css/jquery.terminal-1.7.2.min.css" rel="stylesheet"/>
 
-<span id="term_demo"></span>
-
+<div style="background-color: black;">
+	<span id="terminal"></span>
+</div>
 <script>
-jQuery(function($, undefined) {
-    $('#term_demo').terminal(function(command) {
-        if (command !== '') {
-            try {
-                var result = window.eval(command);
-                if (result !== undefined) {
-                    this.echo(new String(result));
-                }
-            } catch(e) {
-                this.error(new String(e));
-            }
-        } else {
-           this.echo('');
-        }
+ $('#terminal').terminal(function(command, term) {
+        term.pause();
+        $.post('command.php', {cmd: command}).then(function(response) {
+            term.echo(response).resume();
+        });
     }, {
-        greetings: 'Javascript Interpreter',
-        name: 'js_demo',
+        greetings: 'Connecting to terminal!\nConnection successful',
+        name: 'sys-admin',
         height: 200,
-        prompt: 'js> '
+        prompt: 'student@rbc:~$ '
     });
-});
 </script>
