@@ -18,7 +18,7 @@
         <div>
           <label for="js-user-name">Name</label>
           <input type="text" id="js-user-name" class="form-control" required/>
-        </div>
+        </div><br><br>
         <div>
              <p>Find the average of the stock prices below to find the next field to be entered</p>
         </div>
@@ -27,27 +27,27 @@
         </div>
            <div>
           <input type="text" id="js-user-email" class="form-control" required/>
-        </div>
+        </div><br><br>
         <div>
         <label for="js-user-phone">Primary Phone</label>
           <input type="text" id="js-user-phone" class="form-control" required/>
-         </div>
+         </div><br><br>
          <div>
            <label for="js-user-country">Country</label>
           <input type="text" id="js-user-country" class="form-control" required/>
-        </div>
+        </div><br><br>
         <div>
            <label for="js-user-provstate">Province/State</label>
           <input type="text" id="js-user-provstate" class="form-control" required/>
-        </div>
+        </div><br><br>
         <div>
            <label for="js-user-city">City</label>
           <input type="text" id="js-user-city" class="form-control" required/>
-        </div>
+        </div><br><br>
          <div>
           <label for="js-user-postcode">Postal Code/Zip</label>
           <input type="text" id="js-user-postcode" class="form-control" required/>
-         </div>
+         </div><br><br>
          <div>
              <p>Answer the questions within the spreadsheet  below to obtain the next field to be entered</p>
         </div>
@@ -56,15 +56,15 @@
         </div>
            <div>
           <input type="text" id="js-user-institution" class="form-control" required/>
-        </div>
+        </div><br><br>
         <div>
           <label for="js-user-major">Major/Type of Program</label>
           <input type="text" id="js-user-major" class="form-control" required/>
-         </div>
+         </div><br><br>
          <div>
           <label for="js-user-cgpa">cGPA(4.0 scale)</label>
           <input type="text" id="js-user-cgpa" class="form-control" required/>
-         </div>
+         </div><br><br>
         <div>
             <button class="btn btn-primary" onclick="myFunction()">Upload Resume</button>
             <script>
@@ -96,20 +96,30 @@ $(function (){
 
   $('.js-form').on('submit',event =>{
     event.preventDefault();
-    const name=$('#js-user-name').val();
-    const email=$('#js-user-email').val();
-    const phone=$('#js-user-phone').val();
-    const country=$('#js-user-country').val();
-    const provstate=$('#js-user-provstate').val();
-    const city=$('#js-user-city').val();
-    const postalcode=$('#js-user-postcode').val();
-    const institution=$('#js-user-institution').val();
-    const major=$('#js-user-major').val();
-    const cgpa=$('#js-user-cgpa').val();
+    var name=$('#js-user-name').val();
+    var email=$('#js-user-email').val();
+    var phone=$('#js-user-phone').val();
+    var country=$('#js-user-country').val();
+    var provstate=$('#js-user-provstate').val();
+    var city=$('#js-user-city').val();
+    var postalcode=$('#js-user-postcode').val();
+    var institution=$('#js-user-institution').val();
+    var major=$('#js-user-major').val();
+    var cgpa=$('#js-user-cgpa').val();
     console.log( name,email,phone,country,provstate,city,postalcode,major,cgpa)
     firebase.database().ref(name).push({
       name,email,phone,country,provstate,city,postalcode,major,cgpa
     })
+    name=$('#js-user-name').val("");
+    email=$('#js-user-email').val("");
+    phone=$('#js-user-phone').val("");
+    country=$('#js-user-country').val("");
+    provstate=$('#js-user-provstate').val("");
+    city=$('#js-user-city').val("");
+    postalcode=$('#js-user-postcode').val("");
+    institution=$('#js-user-institution').val("");
+    major=$('#js-user-major').val("");
+    cgpa=$('#js-user-cgpa').val("");
   });
 });
 </script>
