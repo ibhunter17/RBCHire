@@ -24,6 +24,7 @@
 .terminal h1, .terminal h2, .terminal h3, .terminal h4, .terminal h5, .terminal h6 {
     line-height: 1.2em;
 }
+
 /*
 .cmd .mask {
     width: 10px;
@@ -64,6 +65,7 @@
     /*overflow: hidden;*/
     overflow-y: auto;
     overflow-x: hidden;
+	word-wrap: break-word;
 }
 .terminal > div {
     height: 100%;
@@ -97,7 +99,7 @@
 .terminal .terminal-output div div, .cmd .prompt {
     display: block;
     line-height: 14px;
-    height: auto;
+    height: auto
 }
 .cmd .prompt > span {
     float: left;
@@ -110,6 +112,7 @@
     font-size: 12px;
     line-height: 14px;
     box-sizing: border-box;
+	word-wrap: break-word;
 }
 .cmd div {
     float: left;
@@ -127,10 +130,13 @@
 }
 .terminal-output > div > div * {
     overflow-wrap: break-word; /* when echo html */
-    word-wrap: break-word;
+	word-wrap: break-word;
+	overflow-x: hidden;
 }
 .terminal .terminal-output div span {
     display: inline-block;
+		word-wrap: break-word;
+	overflow-x: hidden;
 }
 .cmd > span:not(.prompt) {
     float: left;
@@ -246,13 +252,16 @@
 .terminal a:hover {
     color: red;
 }
+.resizer{
+	display: none;
+}
 .terminal .terminal-fill {
     position: absolute;
     left: 0;
     top: -100%;
     width: 100%;
     height: 100%;
-    margin: 1px 0 0;
+    margin: 0px 0 0;
     border: none;
     opacity: 0;
     pointer-events: none;
