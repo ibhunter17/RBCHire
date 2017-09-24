@@ -65,3 +65,6 @@
   position: relative;
   padding: 0 0 0 15px;
 }
+.container {
+  padding: 1rem;
+}

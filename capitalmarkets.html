@@ -1,0 +1,115 @@
+<head>
+  <title>RBCHire</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+</head>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+    <h1>Apply for RBC</h1>
+    <p>Solving the excel puzzles gives information on what to enter within text fields</p>
+      <form class="js-form">
+        <div class="form-group">
+        <div>
+          <label for="js-user-name">Name</label>
+          <input type="text" id="js-user-name" class="form-control" required/>
+        </div>
+        <div>
+             <p>Find the average of the stock prices below to find the next field to be entered</p>
+        </div>
+        <div>
+           <iframe width="300" height="300" src="https://docs.zoho.com/sheet/published.do?rid=2dkzfd8349ebc63ed46b69f77cf01f10100c9&mode=embed"> </iframe>
+        </div>
+           <div>
+          <input type="text" id="js-user-email" class="form-control" required/>
+        </div>
+        <div>
+        <label for="js-user-phone">Primary Phone</label>
+          <input type="text" id="js-user-phone" class="form-control" required/>
+         </div>
+         <div>
+           <label for="js-user-country">Country</label>
+          <input type="text" id="js-user-country" class="form-control" required/>
+        </div>
+        <div>
+           <label for="js-user-provstate">Province/State</label>
+          <input type="text" id="js-user-provstate" class="form-control" required/>
+        </div>
+        <div>
+           <label for="js-user-city">City</label>
+          <input type="text" id="js-user-city" class="form-control" required/>
+        </div>
+         <div>
+          <label for="js-user-postcode">Postal Code/Zip</label>
+          <input type="text" id="js-user-postcode" class="form-control" required/>
+         </div>
+         <div>
+             <p>Answer the questions within the spreadsheet  below to obtain the next field to be entered</p>
+        </div>
+        <div>
+           <iframe width="500" height="500" src="https://docs.zoho.com/sheet/published.do?rid=2i4za316d7c2437d540c098c2d3a43177c3e2&mode=embed"> </iframe>
+        </div>
+           <div>
+          <input type="text" id="js-user-institution" class="form-control" required/>
+        </div>
+        <div>
+          <label for="js-user-major">Major/Type of Program</label>
+          <input type="text" id="js-user-major" class="form-control" required/>
+         </div>
+         <div>
+          <label for="js-user-cgpa">cGPA(4.0 scale)</label>
+          <input type="text" id="js-user-cgpa" class="form-control" required/>
+         </div>
+        <div>
+            <button class="btn btn-primary" onclick="myFunction()">Upload Resume</button>
+            <script>
+function myFunction() {
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "file");
+    document.body.appendChild(x);
+}
+</script>
+        </div>
+    </div>
+         <button id="js-submit" class="btn btn-primary">Next </button>
+   </form>
+  </div>
+  </div>
+</div>
+<script>
+ // Initialize Firebase
+$(function (){
+   const config = {
+    apiKey: "AIzaSyAPpgkpc9OcVKJSDM8723zl97S-tQfED6Q",
+    authDomain: "rbchire-798fa.firebaseapp.com",
+    databaseURL: "https://rbchire-798fa.firebaseio.com",
+    projectId: "rbchire-798fa",
+    storageBucket: "rbchire-798fa.appspot.com",
+    messagingSenderId: "181705574972"
+  };
+  firebase.initializeApp(config);  
+
+  $('.js-form').on('submit',event =>{
+    event.preventDefault();
+    const name=$('#js-user-name').val();
+    const email=$('#js-user-email').val();
+    const phone=$('#js-user-phone').val();
+    const country=$('#js-user-country').val();
+    const provstate=$('#js-user-provstate').val();
+    const city=$('#js-user-city').val();
+    const postalcode=$('#js-user-postcode').val();
+    const institution=$('#js-user-institution').val();
+    const major=$('#js-user-major').val();
+    const cgpa=$('#js-user-cgpa').val();
+    console.log( name,email,phone,country,provstate,city,postalcode,major,cgpa)
+    firebase.database().ref(name).push({
+      name,email,phone,country,provstate,city,postalcode,major,cgpa
+    })
+  });
+});
+</script>
