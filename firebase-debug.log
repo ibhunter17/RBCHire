@@ -1,0 +1,63 @@
+[debug] [2017-09-23T19:12:14.599Z] ----------------------------------------------------------------------
+[debug] [2017-09-23T19:12:14.603Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-09-23T19:12:14.604Z] CLI Version:   3.12.0
+[debug] [2017-09-23T19:12:14.604Z] Platform:      darwin
+[debug] [2017-09-23T19:12:14.604Z] Node Version:  v6.11.3
+[debug] [2017-09-23T19:12:14.604Z] Time:          Sat Sep 23 2017 15:12:14 GMT-0400 (EDT)
+[debug] [2017-09-23T19:12:14.604Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-23T19:12:14.625Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-23T19:12:14.625Z] > authorizing via signed-in user
+[debug] [2017-09-23T19:12:14.629Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fbtest-e9814  
+ Sat Sep 23 2017 15:12:14 GMT-0400 (EDT)
+[debug] [2017-09-23T19:12:15.078Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-23T19:12:15.079Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fbtest-e9814/tokens  
+ Sat Sep 23 2017 15:12:15 GMT-0400 (EDT)
+[debug] [2017-09-23T19:12:15.669Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/NitishDang'...
+[info] 
+[debug] [2017-09-23T19:12:15.674Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fbtest-e9814  
+ Sat Sep 23 2017 15:12:15 GMT-0400 (EDT)
+[debug] [2017-09-23T19:12:16.062Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-23T19:12:16.062Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/607491736474/clients/_:getWebAppConfig  
+ Sat Sep 23 2017 15:12:16 GMT-0400 (EDT)
+[debug] [2017-09-23T19:12:16.360Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: RBCHire
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2017-09-23T19:27:18.280Z] ----------------------------------------------------------------------
+[debug] [2017-09-23T19:27:18.286Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-09-23T19:27:18.287Z] CLI Version:   3.12.0
+[debug] [2017-09-23T19:27:18.287Z] Platform:      darwin
+[debug] [2017-09-23T19:27:18.287Z] Node Version:  v6.11.3
+[debug] [2017-09-23T19:27:18.287Z] Time:          Sat Sep 23 2017 15:27:18 GMT-0400 (EDT)
+[debug] [2017-09-23T19:27:18.287Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-23T19:27:18.309Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-23T19:27:18.310Z] > authorizing via signed-in user
+[debug] [2017-09-23T19:27:18.315Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fbtest-e9814  
+ Sat Sep 23 2017 15:27:18 GMT-0400 (EDT)
+[debug] [2017-09-23T19:27:19.126Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-23T19:27:19.128Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fbtest-e9814/tokens  
+ Sat Sep 23 2017 15:27:19 GMT-0400 (EDT)
+[debug] [2017-09-23T19:27:19.572Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/NitishDang'...
+[info] 
+[debug] [2017-09-23T19:27:19.576Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fbtest-e9814  
+ Sat Sep 23 2017 15:27:19 GMT-0400 (EDT)
+[debug] [2017-09-23T19:27:19.976Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-23T19:27:19.977Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/607491736474/clients/_:getWebAppConfig  
+ Sat Sep 23 2017 15:27:19 GMT-0400 (EDT)
+[debug] [2017-09-23T19:27:20.244Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[debug] [2017-09-23T19:27:20.263Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fbtest-e9814  
+ Sat Sep 23 2017 15:27:20 GMT-0400 (EDT)
+[debug] [2017-09-23T19:27:20.619Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-23T19:27:20.619Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/607491736474/clients/_:getWebAppConfig  
+ Sat Sep 23 2017 15:27:20 GMT-0400 (EDT)
+[debug] [2017-09-23T19:27:20.800Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: RBCHire
+[info] ✔  hosting: Local server: http://localhost:5004
+
